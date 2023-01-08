@@ -1,4 +1,4 @@
-# Reusable infrastructure with Terraform modules: Learn How to Leverage AWS.
+# Reusable Infrastructure with Terraform Modules: Learn How to Leverage AWS.
 
 # Introduction
 
