@@ -14,7 +14,7 @@ As per the [official documentation](https://developer.hashicorp.com/terraform/la
 
 # Setting Up Terraform Modules for AWS
 
-In my AWS project, creation of VPCs are one lengthy chunk of code which is used multiple times. So , I decided to make it as a module and keep it at /var/vpc_module directory.
+In my AWS project, the creation of VPC is one lengthy chunk of code that is used multiple times. So, I decided to make it a module and keep it in /var/vpc_module directory.
 
 Inside this directory module related **.tf** files are stored. It is not necessary to separate into multiple files, but as a best practice I have separated the code into multiple files based on the functionality.
 
