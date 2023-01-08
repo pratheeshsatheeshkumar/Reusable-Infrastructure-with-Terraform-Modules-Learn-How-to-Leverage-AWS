@@ -646,3 +646,13 @@ After creation of the VPC, Subnets and associated resources, control comes back 
 # Conclusion
 
 Terraform modules allow you to easily and efficiently create, manage, and reuse resources in AWS. In this article, you learned how to leverage terraform modules to automate AWS. You should now feel comfortable creating your own terraform modules and using them to automate your AWS infrastructure.
+
+**Read my articles on medium.com.**
+ <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/4"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/4">
+ <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/3"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/3">
+
+ <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/2"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/2">
+
+ <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/1">
+
+ <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/0" >
