@@ -233,7 +233,7 @@ Output values make information about your infrastructure available on the comman
 
 In modules, output values are used to return output values to the parent module. vpc_id points to the newly created VPC by vpc_module. public subnets are passed by the list **public_subnets.** Moreover, **private subnets** are passed by the list **private_subnets.**
 
-# Creation of pubic and private subnets in vpc_module.
+# Creation of public and private subnets in the vpc_module.
 ```sh
 /*==== Public Subnets ======*/  
 /* Creation of Public subnets, one for each availability zone in the region  */  
