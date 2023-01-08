@@ -165,7 +165,7 @@ Later in this article, I will analyze the code and identify various components o
 
 Generally speaking the following resources are there in the main.tf file
 
-1.  Creation of VPC with the
+1.  Creation of VPC.
 2.  Create internet gateway for the public subnets and attach with vpc
 3.  Creation of Public subnets, one for each availability zone in the region
 4.  Creation of Private subnets, one for each availability zone in the region
