@@ -24,15 +24,15 @@ variable "region" {
 
 variable "access_key" {
 
-  #default     = "AKIAVMDQREWV2AMXBIA7"
-  default      = "AKIAYHVF6JBOY34ZLHWR" #DevOps LAB
+
+  default      = ""
   description = "access key of the provider"
 }
 
 variable "secret_key" {
 
- # default     = "IpM31fx/SXy/38Dj9O+Jw8SfoDAfd0wD8N0DuY0Z"
-   default     = "CylWiXG1J8mKO5P9bOVkEJ5r/WL9HkT6eeMmQ39E" #DevOps LAB
+
+   default     = ""
   description = "secret key of the provider"
 }
 
