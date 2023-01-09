@@ -19,8 +19,8 @@ provider "aws" {
 terraform {
   backend "s3" {
 
-    access_key = "AKIAYHVF6JBOY34ZLHWR"
-    secret_key = "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"
+    access_key = "XXXXX"
+    secret_key = "YYYYY"
     bucket = "terraform-pratheesh.tech"
     key    = "terraform.tfstate"
     region = "ap-south-1"
