@@ -196,7 +196,7 @@ cidr block is assigned to **var.cidr_vpc** variable. **var.project** name and **
 
 Here, number of availability zones in the region defined in the root module will be calculated and assigned to **local.subnets** value.
 
-> **[**vpc-module/datasource.tf***](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/datasource.tf)*
+> **[vpc-module/datasource.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/datasource.tf)**
 ```sh
 /*==== aws_availability_zones ======*/  
 /*Gathering of AZs in the region. */  
