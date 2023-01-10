@@ -14,15 +14,15 @@ As per the [official documentation](https://developer.hashicorp.com/terraform/la
 
 # Setting Up Terraform Modules for AWS
 
-In my AWS project, the creation of VPC is one lengthy chunk of code that is used multiple times. So, I decided to make it a module and keep it in /var/vpc_module directory.
+In my AWS project, the creation of VPC is one lengthy chunk of code that is used multiple times. So, I decided to make it a module and keep it in https://github.com/pratheeshsatheeshkumar/vpc-module repository.
 
-Inside this directory module related **.tf** files are stored. It is not necessary to separate into multiple files, but as a best practice I have separated the code into multiple files based on the functionality.
+In this repository, module related **.tf** files are stored. It is not necessary to separate into multiple files, but as a best practice I have separated the code into multiple files based on the functionality.
 
 Your module file should include all of the necessary information to create the resources it defines, including the name of the resource, the configuration and provider information, and any variables you may need.
 
-![](https://miro.medium.com/max/1400/1*6mo_O8JMw0U1cWeNiMcaYQ.png)
 
-> **main.tf**
+
+> **[vpc-module/main.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/main.tf)**
 
 main.tf contains the following code. Let me explain the top-level architecture for the time being.
 ```sh
@@ -176,7 +176,7 @@ Generally speaking the following resources are there in the main.tf file
 9.  Association of Public route table with public subnets.
 10.  Association of Private route table with private subnets.
 
-> **variables.tf**
+> **[vpc-module/variables.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/variables.tf)**
 ```sh
 locals {  
   subnets = length(data.aws_availability_zones.available.names)  
@@ -190,13 +190,13 @@ variable "enable_nat_gateway" {
   type = bool  
 }
 ```
-Input variables that are passed as arguments from the root module should be declared as variables in the variables.tf of the module.
+Input variables that are passed as arguments from the root module should be declared as variables in the [variables.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/variables.tf) of the module.
 
 cidr block is assigned to **var.cidr_vpc** variable. **var.project** name and **var.environment** name is assigned in the similar fashion. **var.enable_nat_gateway** has a particular importance in the code logic that will be explained later.
 
 Here, number of availability zones in the region defined in the root module will be calculated and assigned to **local.subnets** value.
 
-> **datasource.tf**
+> **[**vpc-module/datasource.tf***](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/datasource.tf)*
 ```sh
 /*==== aws_availability_zones ======*/  
 /*Gathering of AZs in the region. */  
@@ -207,7 +207,7 @@ data "aws_availability_zones" "available" {
 ```
 Terraform can use data sources to access information defined outside of Terraform, defined by another Terraform configuration, or modified by functions. Here this **data.aws_availability_zones** gather the list of availability zones in the current region.
 
-> **outputs.tf**
+> **[vpc-module/outputs.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/outputs.tf)**
 ```sh
 output "vpc_id"{  
   
@@ -285,11 +285,11 @@ tfvars files are used to create multiple environments for the project by feeding
 
 Assume if enable_nat_gateway = true, then what will happen to the vpc_module. Let us check it now.
 
-> **main.tf of the root module will make a call to vpc_module.**
+> **[main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf) of the root module will make a call to vpc_module repository.**
 ```sh
 module "vpc_module" {  
   
-    source = "/var/vpc_module"  
+    source = "github.com/pratheeshsatheeshkumar/vpc-module"
       
     project = var.project  
     environment = var.environment  
@@ -297,9 +297,9 @@ module "vpc_module" {
     enable_nat_gateway = var.enable_nat_gateway  
 }
 ```
-You can see some input variables which are fed from **main.tf** of the root module. **enble_nat_gateway** is fed with value **true** as well.
+You can see some input variables which are fed from **[main.tf](%28https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf)** of the root module. **enble_nat_gateway** is fed with value **true** as well.
 
-> **main.tf of vpc_module**
+> **[vpc-module/main.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/main.tf)**
 ```sh
 /*==== Elastic IP ======*/  
 /* Creation of Elastic IP for  NAT Gateway */  
@@ -363,7 +363,7 @@ resource "aws_route" "private_route" {
 ```
 We need an entry of NAT Gateway in the private route table for public access. if our flag is false private route will be created without any route through nat_gateway.
 
-> **Complete code of main.tf of the root module.**
+> **Complete code of [main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf) of the root module.**
 ```sh
 module "vpc_module" {  
   
@@ -656,3 +656,4 @@ Terraform modules allow you to easily and efficiently create, manage, and reuse 
  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/1">
 
  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@yespratheesh/0" >
+
