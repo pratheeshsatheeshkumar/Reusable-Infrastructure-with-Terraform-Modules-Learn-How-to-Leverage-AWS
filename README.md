@@ -639,7 +639,7 @@ resource "aws_ec2_managed_prefix_list" "ip_pool_prefix_list" {
 }  
   ```
   
-This part of the code is documented separately in this repository.  Please find it here : **[Deployment-of-Three-Tier-Architecture-in-AWS-using-Terraform](https://github.com/pratheeshsatheeshkumar/Deployment-of-Three-Tier-Architecture-in-AWS-using-Terraform)** 
+This part of the code is documented in another project repository.  You can find it here : **[Deployment-of-Three-Tier-Architecture-in-AWS-using-Terraform](https://github.com/pratheeshsatheeshkumar/Deployment-of-Three-Tier-Architecture-in-AWS-using-Terraform)** 
 
 After creation of the VPC, Subnets and associated resources, control comes back to the root module. ID values of VPCs, Subnets and NAT Gateways are returned back, which are used for the creation of resources like security groups and instances.
 
