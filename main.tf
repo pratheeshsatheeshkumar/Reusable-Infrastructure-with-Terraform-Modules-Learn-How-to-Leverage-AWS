@@ -1,6 +1,6 @@
 module "vpc_module" {
 
-    source = "/var/vpc_module"
+    source = "github.com/pratheeshsatheeshkumar/vpc-module"
     
     project = var.project
     environment = var.environment
