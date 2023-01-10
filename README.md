@@ -285,7 +285,7 @@ tfvars files are used to create multiple environments for the project by feeding
 
 Assume if enable_nat_gateway = true, then what will happen to the vpc_module. Let us check it now.
 
-> **[main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf) of the root module will make a call to vpc_module repository.**
+> **[main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS/blob/main/main.tf) of the root module will make a call to vpc_module repository.**
 ```sh
 module "vpc_module" {  
   
@@ -297,7 +297,7 @@ module "vpc_module" {
     enable_nat_gateway = var.enable_nat_gateway  
 }
 ```
-You can see some input variables which are fed from **[main.tf](%28https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf)** of the root module. **enble_nat_gateway** is fed with value **true** as well.
+You can see some input variables which are fed from **[main.tf](%28https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS/blob/main/main.tf)** of the root module. **enble_nat_gateway** is fed with value **true** as well.
 
 > **[vpc-module/main.tf](https://github.com/pratheeshsatheeshkumar/vpc-module/blob/master/main.tf)**
 ```sh
@@ -363,7 +363,7 @@ resource "aws_route" "private_route" {
 ```
 We need an entry of NAT Gateway in the private route table for public access. if our flag is false private route will be created without any route through nat_gateway.
 
-> **Complete code of [main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS./blob/main/main.tf) of the root module.**
+> **Complete code of [main.tf](https://github.com/pratheeshsatheeshkumar/Reusable-Infrastructure-with-Terraform-Modules-Learn-How-to-Leverage-AWS/blob/main/main.tf) of the root module.**
 ```sh
 module "vpc_module" {  
   
